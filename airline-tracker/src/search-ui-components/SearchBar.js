@@ -10,7 +10,7 @@ export const SearchBar = ({setResults, searchType}) => {
         .then((response) => response.json())
         .then((json) => {
             const results = json.filter((user) => {
-                return value && user && user.name && user.name.toLowerCase().includes(value);
+                return value && user && user.name && user.name.toLowerCase().includes(value.toLowerCase());
             });
             setResults(results);
         });

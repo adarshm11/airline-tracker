@@ -18,7 +18,7 @@ function SearchUI() {
                 <SearchResults results={results2} />
             </div>
             <div className="search-bar-button">
-                <button type="button">GO</button>
+                <button type="button" onClick={(e) => window.confirm("Proceed?")}>GO</button>
             </div>
         </div>
 
