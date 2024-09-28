@@ -17,6 +17,9 @@ function SearchUI() {
                 <SearchBar setResults={setResults2} searchType="Destination..." />
                 <SearchResults results={results2} />
             </div>
+            <div className="search-bar-button">
+                <button type="button">GO</button>
+            </div>
         </div>
 
     )
