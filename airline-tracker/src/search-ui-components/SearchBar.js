@@ -3,16 +3,38 @@ import {FaSearch} from "react-icons/fa"
 import "./SearchBar.css"
 
 export const SearchBar = ({setResults, searchType}) => {
+
     const [input, setInput] = useState("");
+    const [results, setResultsLocal] = useState([]);
+
+    const SearchResult = ({result}) => {
+        return (
+            <div className="search-result" onClick={() => handleClick(result.name)}>
+                {result.name}
+            </div>
+        )
+    }
+
+    // 
+    const SearchResults = ({results}) => {
+        return (
+            <div className="results-list">
+                {results.map((result, id) => {
+                    return <SearchResult result={result} key={id}/>;
+                })}
+            </div>
+        );
+    };
 
     const fetchData = (value) => {
-        fetch("https://jsonplaceholder.typicode.com/users") // to be replaced with airline codes
+        fetch("https://jsonplaceholder.typicode.com/users") 
         .then((response) => response.json())
-        .then((json) => {
-            const results = json.filter((user) => {
+        .then((json) => { 
+            const filteredResults = json.filter((user) => { 
                 return value && user && user.name && user.name.toLowerCase().includes(value.toLowerCase());
             });
-            setResults(results);
+            setResultsLocal(filteredResults); 
+            setResults(filteredResults);
         });
     };
 
@@ -21,14 +43,24 @@ export const SearchBar = ({setResults, searchType}) => {
         fetchData(value);
     };
 
+    const handleClick = (value) => {
+        setInput(value);
+        setResultsLocal([]);
+    }
+
     return (
-        <div classname="input-wrapper">
-            <FaSearch id="search-icon" />
-            <input 
-                placeholder={searchType} 
-                value={input} 
-                onChange={(e) => handleChange(e.target.value)}
-            />
+        <div>
+            <div className="input-wrapper">
+                <FaSearch id="search-icon" />
+                <input 
+                    placeholder={searchType} 
+                    value={input} 
+                    onChange={(e) => handleChange(e.target.value)}
+                />
+            </div>
+            <div className="search-results">
+                {results.length > 0 && <SearchResults results={results} />}
+            </div>
         </div>
     );
 };
