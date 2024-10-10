@@ -2,10 +2,9 @@ import React, {useState} from "react"
 import {FaSearch} from "react-icons/fa"
 import "./SearchBar.css"
 
-export const SearchBar = ({setResults, searchType}) => {
+export const SearchBar = ({setInput, setResults, setSelectedResult, searchType, inputValue, error}) => {
 
-    const [input, setInput] = useState("");
-    const [results, setResultsLocal] = useState([]);
+    const [resultsLocal, setResultsLocal] = useState([]);
 
     const SearchResult = ({result}) => {
         return (
@@ -15,7 +14,6 @@ export const SearchBar = ({setResults, searchType}) => {
         )
     }
 
-    // 
     const SearchResults = ({results}) => {
         return (
             <div className="results-list">
@@ -41,25 +39,27 @@ export const SearchBar = ({setResults, searchType}) => {
     const handleChange = (value) => {
         setInput(value);
         fetchData(value);
+        setSelectedResult(null);
     };
 
     const handleClick = (value) => {
         setInput(value);
         setResultsLocal([]);
+        setSelectedResult(value);
     }
 
     return (
         <div>
-            <div className="input-wrapper">
+            <div className={`input-wrapper ${error ? 'error' : ''}`}>
                 <FaSearch id="search-icon" />
                 <input 
                     placeholder={searchType} 
-                    value={input} 
+                    value={inputValue} 
                     onChange={(e) => handleChange(e.target.value)}
                 />
             </div>
             <div className="search-results">
-                {results.length > 0 && <SearchResults results={results} />}
+                {resultsLocal.length > 0 && <SearchResults results={resultsLocal} />}
             </div>
         </div>
     );

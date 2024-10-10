@@ -7,6 +7,21 @@
     box-shadow: 0px 0px 8px #ddd;
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.input-wrapper::after {
+    content: "❌"; /* Use a red exclamation mark or other symbol */
+    color: red; /* Set the color to red */
+    position: absolute; /* Position it absolutely */
+    right: 10px; /* Adjust the position from the right */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    display: none; /* Hide by default */
+}
+
+.input-wrapper.error::after {
+    display: block; /* Show the exclamation mark when there is an error */
 }
 
 .input {

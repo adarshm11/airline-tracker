@@ -12,5 +12,28 @@
 .search-bar-button {
     position: relative;
     display: inline-block;
-    width: 10%;
+    background-color: gray;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.search-bar-button button:disabled {
+    background-color: lightgray;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+    font-size: 12px;
+    height: 20px;
+}
+
+.error-message-wrapper {
+    position: absolute;
+    border-color: black;
+    top: 100%;
+    left: 0%;
+    min-width: 200px;
+    display: 0;
 }
