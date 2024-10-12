@@ -1,6 +1,7 @@
-import React, {useState} from "react"
-import {FaSearch} from "react-icons/fa"
-import "./SearchBar.css"
+import React, {useState} from "react";
+import {FaSearch} from "react-icons/fa";
+import "./SearchBar.css";
+import airportData from "./airport_codes.json";
 
 export const SearchBar = ({setInput, setResults, setSelectedResult, searchType, inputValue, error}) => {
 
@@ -8,8 +9,8 @@ export const SearchBar = ({setInput, setResults, setSelectedResult, searchType, 
 
     const SearchResult = ({result}) => {
         return (
-            <div className="search-result" onClick={() => handleClick(result.name)}>
-                {result.name}
+            <div className="search-result" onClick={() => handleClick(result.id)}>
+                {result.id} - {result.name}
             </div>
         )
     }
@@ -25,15 +26,11 @@ export const SearchBar = ({setInput, setResults, setSelectedResult, searchType, 
     };
 
     const fetchData = (value) => {
-        fetch("https://jsonplaceholder.typicode.com/users") 
-        .then((response) => response.json())
-        .then((json) => { 
-            const filteredResults = json.filter((user) => { 
-                return value && user && user.name && user.name.toLowerCase().includes(value.toLowerCase());
-            });
-            setResultsLocal(filteredResults); 
-            setResults(filteredResults);
+        const filteredResults = airportData.filter((entry) => { // must make better filtering algorithm
+            return value && entry && entry.name && entry.name.toLowerCase().includes(value.toLowerCase());
         });
+        setResultsLocal(filteredResults); 
+        setResults(filteredResults);
     };
 
     const handleChange = (value) => {

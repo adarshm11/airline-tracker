@@ -11,9 +11,9 @@
 }
 
 .input-wrapper::after {
-    content: "❌"; /* Use a red exclamation mark or other symbol */
-    color: red; /* Set the color to red */
-    position: absolute; /* Position it absolutely */
+    content: "❗️"; /* Use a red exclamation mark or other symbol */
+    color: red;
+    position: absolute;
     right: 10px; /* Adjust the position from the right */
     top: 50%; /* Center vertically */
     transform: translateY(-50%); /* Adjust for vertical centering */

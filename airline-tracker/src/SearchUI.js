@@ -1,6 +1,6 @@
-import { useState } from "react"
-import "./SearchUI.css"
-import { SearchBar } from "./search-ui-components/SearchBar";
+import { useState } from "react";
+import "./SearchUI.css";
+import { SearchBar } from "./SearchBar";
 import { useNavigate } from "react-router-dom";
 
 
@@ -70,8 +70,10 @@ export function SearchUI() {
 
     // when error is thrown, determine which error -> REDUNDANT TO CHECK FOR ERROR THEN CHECK WHICH ERROR
     const computeError = (barNumber, error) => {
-        if (selectedResult1 === selectedResult2) return "Departure and arrival airports cannot be the same."
-        if (barNumber === 1){
+        if (selectedResult1 && selectedResult2 && selectedResult1 === selectedResult2){
+            return "Departure and arrival airports cannot be the same."
+        } 
+        else if (barNumber === 1){
             if (!selectedResult1) return "Enter departure airport."
             else return "Enter arrival airport."
         }
@@ -92,10 +94,10 @@ export function SearchUI() {
                     inputValue={input1}
                     error={error1}
                 />
-            </div>
-            <div className="error-message-wrapper">
+                <div className="error-message-wrapper">
                     {error1 && <div className="error-message">{computeError(1, error1)}</div>}
                 </div>
+            </div>
             <div className="search-bar-container">
                 <SearchBar 
                     setInput={(value) => {handleInputChange(2, value);}}
