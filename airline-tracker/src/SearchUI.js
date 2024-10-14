@@ -70,7 +70,7 @@ export function SearchUI() {
 
     // when error is thrown, determine which error -> REDUNDANT TO CHECK FOR ERROR THEN CHECK WHICH ERROR
     const computeError = (barNumber, error) => {
-        if (selectedResult1 && selectedResult2 && selectedResult1 === selectedResult2){
+        if (selectedResult1 && selectedResult2 && selectedResult1 === selectedResult2){ // same results for both
             return "Departure and arrival airports cannot be the same."
         } 
         else if (barNumber === 1){
@@ -78,8 +78,8 @@ export function SearchUI() {
             else return "Enter arrival airport."
         }
         else {
-            if (!selectedResult2) return "Enter departure airport."
-            else return "Enter arrival airport."
+            if (!selectedResult2) return "Enter arrival airport."
+            else return "Enter departure airport."
         }
     }
 

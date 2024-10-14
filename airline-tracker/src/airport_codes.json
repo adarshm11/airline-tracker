@@ -170,12 +170,12 @@
 		"state": "Connecticut"
 	},
 	{
-		"name": "Washington, Dulles International Airport",
+		"name": "Washington Dulles International Airport",
 		"id": "IAD",
-		"state": "District of Columbia"
+		"state": "Virginia"
 	},
 	{
-		"name": "Washington National Airport",
+		"name": "Ronald Reagan Washington National Airport",
 		"id": "DCA",
 		"state": "District of Columbia"
 	},
@@ -863,11 +863,6 @@
 		"name": "Rutland",
 		"id": "RUT",
 		"state": "Vermont"
-	},
-	{
-		"name": "Dulles",
-		"id": "IAD",
-		"state": "Virginia"
 	},
 	{
 		"name": "Newport News",

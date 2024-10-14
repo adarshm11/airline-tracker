@@ -27,7 +27,10 @@ export const SearchBar = ({setInput, setResults, setSelectedResult, searchType, 
 
     const fetchData = (value) => {
         const filteredResults = airportData.filter((entry) => { // must make better filtering algorithm
-            return value && entry && entry.name && entry.name.toLowerCase().includes(value.toLowerCase());
+            return value && entry && entry.name && entry.id &&
+            (entry.name.toLowerCase().includes(value.toLowerCase()) || 
+            entry.id.toLowerCase().includes(value.toLowerCase()));
+            
         });
         setResultsLocal(filteredResults); 
         setResults(filteredResults);
