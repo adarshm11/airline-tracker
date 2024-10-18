@@ -1,0 +1,39 @@
+.search-bar-container {
+    position: relative;
+    padding-top: 20vh;
+    width: 10%;
+    margin: auto;
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+}
+
+.search-bar-button {
+    position: relative;
+    display: inline-block;
+    background-color: gray;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.search-bar-button button:disabled {
+    background-color: lightgray;
+    cursor: not-allowed;
+}
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+    font-size: 12px;
+    height: 20px;
+}
+
+.error-message-wrapper {
+    position: absolute;
+    border-color: black;
+    top: 100%;
+    left: 0%;
+    min-width: 200px;
+    display: 0;
+}
