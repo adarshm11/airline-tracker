@@ -75,11 +75,9 @@ export function SearchUI() {
         } 
         else if (barNumber === 1){
             if (!selectedResult1) return "Enter departure airport."
-            else return "Enter arrival airport."
         }
         else {
             if (!selectedResult2) return "Enter arrival airport."
-            else return "Enter departure airport."
         }
     }
 
