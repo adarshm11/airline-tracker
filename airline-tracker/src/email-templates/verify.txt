@@ -1,1 +1,11 @@
-(store template of email to verify email address with new user)
+Subject: Email Verification
+
+Dear {User},
+
+You are receiving this email because you initiated a first-time signup to start receiving notifications for your favorite airlines. 
+In order to verify your identity, please enter this one-time code on our website when prompted (expires in 2 minutes): {code}
+
+If you did not initiate this request, you can safely ignore this notice.
+
+Yours truly, 
+The Airline Tracker Team

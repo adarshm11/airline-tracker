@@ -1,1 +1,10 @@
-(store template to email to alert user of price change)
+Subject: {Airline} Price Change
+
+Dear {User},
+
+You are receiving this email because you subscribed to notifications for {airline} flights from {departure} to {arrival}.
+This email is to notify you that {airline}'s price for flights from {departure} to {arrival} is now ${price}. Head to {airline
+website} to purchase now!
+
+Yours truly, 
+The Airline Tracker Team
