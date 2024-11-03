@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import AddItemForm from "./EmailForm"
 
 export function FlightResults() {
     return (
         <div>
-            <h1>Flight results</h1>
+            <h1>Enter Email:</h1>
+            <AddItemForm/>
         </div>
     )
 }
