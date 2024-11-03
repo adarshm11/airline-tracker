@@ -1,7 +1,7 @@
 import './App.css';
 import { FlightResults } from './FlightResults.js';
 import { SearchUI } from './SearchUI.js';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
