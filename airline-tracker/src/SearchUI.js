@@ -83,6 +83,7 @@ export function SearchUI() {
 
     return (
         <div>
+            <h1>Find Your Flight</h1>
             <div className="search-bar-container">
                 <SearchBar 
                     setInput={(value) => {handleInputChange(1, value);}}
