@@ -20,3 +20,20 @@
 .App-link {
   color: #61dafb;
 }
+
+.nav-bar {
+  height: 60px;
+  background-color: #8d8e8e;
+  display: flex;
+}
+
+.logo {
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  margin: 5px;
+}
+
+/* .logo:hover {
+  
+} */
