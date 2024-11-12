@@ -1,6 +1,4 @@
-Subject: Email Verification
-
-Dear {User},
+Dear New User,
 
 You are receiving this email because you initiated a first-time signup to start receiving notifications for your favorite airlines. 
 In order to verify your identity, please enter this one-time code on our website when prompted (expires in 2 minutes): {code}
